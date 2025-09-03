@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced design system with improved contrast and modern aesthetics
+All colors MUST be HSL.
+*/
+@layer base {
+  :root {
+    /* Light mode - Softer whites with subtle warm undertones */
+    --background: 20 14.3% 97.1%; /* Softer off-white */
+    --foreground: 224 71.4% 4.1%; /* Rich dark blue-black */
+    --card: 0 0% 100%; /* Pure white for cards */
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    /* Modern blue primary with better contrast */
+    --primary: 221.2 83.2% 53.3%; /* Vibrant blue */
+    --primary-foreground: 210 20% 98%;
+
+    /* Refined secondary colors */
+    --secondary: 220 14.3% 95.9%; /* Cool light gray */
+    --secondary-foreground: 224 71.4% 4.1%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%; /* Better contrast muted text */
+    --accent: 212 95% 68%; /* Bright accent blue */
+    --accent-foreground: 210 20% 98%;
+
+    /* Enhanced status colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --success: 142.1 76.2% 36.3%; /* Added success color */
+    --success-foreground: 355.7 100% 97.3%;
+    --warning: 32.1 94.6% 43.7%; /* Added warning color */
+    --warning-foreground: 210 20% 98%;
+
+    /* Refined borders and inputs */
+    --border: 220 13% 91%; /* Slightly more visible borders */
+    --input: 220 13% 91%;
+    --ring: 221.2 83.2% 53.3%; /* Match primary */
+    --radius: 0.5rem;
+
+    /* Enhanced sidebar colors */
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 221.2 83.2% 53.3%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 220 14.3% 95.9%;
+    --sidebar-accent-foreground: 224 71.4% 4.1%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221.2 83.2% 53.3%;
+  }
+
+  .dark {
+    /* Dark mode - True dark with subtle blue undertones */
+    --background: 224 71.4% 4.1%; /* Rich dark blue-black */
+    --foreground: 210 20% 98%; /* Soft white */
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Brighter primary for dark mode accessibility */
+    --primary: 212 95% 68%; /* Bright blue for dark backgrounds */
+    --primary-foreground: 222.2 84% 4.9%;
+
+    /* Enhanced secondary colors for dark mode */
+    --secondary: 215 27.9% 16.9%; /* Warmer dark gray */
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%; /* Better contrast for dark mode */
+    --accent: 212 95% 68%; /* Consistent accent */
+    --accent-foreground: 222.2 84% 4.9%;
+
+    /* Dark mode status colors */
+    --destructive: 0 72.2% 50.6%; /* Slightly muted red for dark */
+    --destructive-foreground: 210 20% 98%;
+    --success: 142.1 70.6% 45.3%; /* Brighter green for dark */
+    --success-foreground: 144.9 80.4% 10%;
+    --warning: 32.1 94.6% 43.7%; /* Keep warning bright */
+    --warning-foreground: 20 14.3% 4.1%;
+
+    /* Dark mode borders and inputs */
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 212 95% 68%; /* Match primary */
+
+    /* Enhanced dark sidebar */
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 212 95% 68%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 215 27.9% 16.9%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 27.9% 16.9%;
+    --sidebar-ring: 212 95% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

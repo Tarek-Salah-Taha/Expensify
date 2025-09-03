@@ -1,0 +1,17 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "Xmark",
+        "الأحد",
+        "الأربعاء",
+        "الاثنين",
+        "الجمعة",
+        "الخميس",
+        "السبت"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
