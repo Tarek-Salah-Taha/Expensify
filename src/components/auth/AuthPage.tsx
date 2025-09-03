@@ -7,7 +7,11 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FiMoon, FiSun, FiGlobe } from "react-icons/fi";
 
-export const AuthPage = () => {
+type AuthPageProps = {
+  onContinueAsGuest: () => void;
+};
+
+export const AuthPage = ({ onContinueAsGuest }: AuthPageProps) => {
   const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage } = useLanguage();
@@ -15,10 +19,12 @@ export const AuthPage = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md bg-card rounded-2xl shadow-lg p-6">
         {/* Header Controls */}
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-primary">Expensify</h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-primary">
+            Expensify
+          </h1>
           <div className="flex gap-2">
             <Button
               variant="outline"
@@ -53,10 +59,14 @@ export const AuthPage = () => {
         {/* Guest Mode Button */}
         <div className="mt-6 text-center">
           <p className="text-sm text-muted-foreground mb-2">
-            Or continue as guest (data saved locally)
+            {t("continueAsGuestLocally")}
           </p>
-          <Button variant="outline" className="w-full">
-            Continue as Guest
+          <Button
+            variant="outline"
+            className="w-full bg-background/80 backdrop-blur-sm"
+            onClick={onContinueAsGuest}
+          >
+            {t("continueAsGuest")}
           </Button>
         </div>
       </div>

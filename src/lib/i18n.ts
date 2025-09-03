@@ -20,6 +20,8 @@ const resources = {
       forgotPassword: "Forgot Password?",
       dontHaveAccount: "Don't have an account?",
       alreadyHaveAccount: "Already have an account?",
+      continueAsGuest: "Continue as Guest",
+      continueAsGuestLocally: "Or continue as guest (data saved locally)",
 
       // Expense Form
       addExpense: "Add Expense",
@@ -47,6 +49,12 @@ const resources = {
       thisMonth: "This Month",
       recentExpenses: "Recent Expenses",
       noExpenses: "No expenses found",
+      averagePerExpense: "Average per Expense",
+      categoriesUsed: "Categories Used",
+      differentCategories: "Different categories",
+      perExpenseAverage: "Per expense average",
+      expensesThisMonth: "Expenses this month",
+      expensesTotal: "Expenses total",
 
       // Common
       loading: "Loading...",
@@ -61,6 +69,11 @@ const resources = {
       loginSuccess: "Login successful",
       registerSuccess: "Registration successful",
       logoutSuccess: "Logout successful",
+
+      // 404 Page
+      pageNotFound: "404 - Page Not Found",
+      oopsMessage: "Oops! The page you’re looking for doesn’t exist.",
+      returnHome: "Return to Home",
     },
   },
   ar: {
@@ -81,6 +94,8 @@ const resources = {
       forgotPassword: "نسيت كلمة المرور؟",
       dontHaveAccount: "ليس لديك حساب؟",
       alreadyHaveAccount: "لديك حساب بالفعل؟",
+      continueAsGuest: "الاستمرار كضيف",
+      continueAsGuestLocally: "أو الاستمرار كضيف (يتم حفظ البيانات محليًا)",
 
       // Expense Form
       addExpense: "إضافة مصروف",
@@ -108,12 +123,18 @@ const resources = {
       thisMonth: "هذا الشهر",
       recentExpenses: "المصروفات الأخيرة",
       noExpenses: "لا توجد مصروفات",
+      averagePerExpense: "متوسط المصروفات",
+      categoriesUsed: "الفئات المستخدمة",
+      differentCategories: "فئات مختلفة",
+      perExpenseAverage: "متوسط المصروفات",
+      expensesThisMonth: "المصروفات هذا الشهر",
+      expensesTotal: "إجمالي المصروفات",
 
       // Common
       loading: "جاري التحميل...",
       error: "خطأ",
       success: "نجح",
-      currency: "ر.س",
+      currency: "دولار",
 
       // Messages
       expenseAdded: "تم إضافة المصروف بنجاح",
@@ -122,6 +143,11 @@ const resources = {
       loginSuccess: "تم تسجيل الدخول بنجاح",
       registerSuccess: "تم إنشاء الحساب بنجاح",
       logoutSuccess: "تم تسجيل الخروج بنجاح",
+
+      // 404 Page
+      pageNotFound: "404 - لم يتم العثور على الصفحة",
+      oopsMessage: "عفواً! الصفحة التي تبحث عنها غير موجودة.",
+      returnHome: "العودة إلى الصفحة الرئيسية",
     },
   },
 };
