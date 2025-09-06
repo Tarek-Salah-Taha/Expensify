@@ -34,6 +34,8 @@ const resources = {
       save: "Save",
       cancel: "Cancel",
       delete: "Delete",
+      actions: "Actions",
+      edit: "Edit",
 
       // Categories
       food: "Food",
@@ -108,6 +110,8 @@ const resources = {
       save: "حفظ",
       cancel: "إلغاء",
       delete: "حذف",
+      actions: "الإجراءات",
+      edit: "تعديل",
 
       // Categories
       food: "طعام",
