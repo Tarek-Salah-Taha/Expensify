@@ -22,6 +22,8 @@ const resources = {
       alreadyHaveAccount: "Already have an account?",
       continueAsGuest: "Continue as Guest",
       continueAsGuestLocally: "Or continue as guest (data saved locally)",
+      enterEmail: "Enter your email",
+      enterPassword: "Enter your Password",
 
       // Expense Form
       addExpense: "Add Expense",
@@ -36,6 +38,8 @@ const resources = {
       delete: "Delete",
       actions: "Actions",
       edit: "Edit",
+      enterDescription: "Enter Description",
+      optional: "Optional",
 
       // Categories
       food: "Food",
@@ -57,12 +61,15 @@ const resources = {
       perExpenseAverage: "Per expense average",
       expensesThisMonth: "Expenses this month",
       expensesTotal: "Expenses total",
+      expensesByCategory: "Expenses By Category",
+      monthlySpending: "Monthly Spending",
 
       // Common
       loading: "Loading...",
       error: "Error",
       success: "Success",
       currency: "$",
+      deleting: "Deleting...",
 
       // Messages
       expenseAdded: "Expense added successfully",
@@ -71,6 +78,9 @@ const resources = {
       loginSuccess: "Login successful",
       registerSuccess: "Registration successful",
       logoutSuccess: "Logout successful",
+      deleteExpense: "Delete Expense",
+      deleteExpenseConfirmation:
+        "Are you sure you want to delete this expense?",
 
       // 404 Page
       pageNotFound: "404 - Page Not Found",
@@ -112,6 +122,10 @@ const resources = {
       delete: "حذف",
       actions: "الإجراءات",
       edit: "تعديل",
+      enterEmail: "أدخل بريدك الإلكتروني",
+      enterPassword: "أدخل كلمة المرور الخاصة بك",
+      enterDescription: "أدخل الوصف",
+      optional: "اختياري",
 
       // Categories
       food: "طعام",
@@ -133,12 +147,15 @@ const resources = {
       perExpenseAverage: "متوسط المصروفات",
       expensesThisMonth: "المصروفات هذا الشهر",
       expensesTotal: "إجمالي المصروفات",
+      expensesByCategory: "الإنفاق حسب الفئة",
+      monthlySpending: "الإنفاق الشهري",
 
       // Common
       loading: "جاري التحميل...",
       error: "خطأ",
       success: "نجح",
       currency: "دولار",
+      deleting: "جاري الحذف...",
 
       // Messages
       expenseAdded: "تم إضافة المصروف بنجاح",
@@ -147,6 +164,8 @@ const resources = {
       loginSuccess: "تم تسجيل الدخول بنجاح",
       registerSuccess: "تم إنشاء الحساب بنجاح",
       logoutSuccess: "تم تسجيل الخروج بنجاح",
+      deleteExpense: "حذف المصروف",
+      deleteExpenseConfirmation: "؟هل أنت متأكد أنك تريد حذف هذه المصروفات",
 
       // 404 Page
       pageNotFound: "404 - لم يتم العثور على الصفحة",

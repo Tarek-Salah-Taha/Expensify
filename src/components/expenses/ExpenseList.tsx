@@ -20,6 +20,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -189,12 +200,63 @@ const EditExpenseDialog = ({
                 loading || !formData.title.trim() || formData.amount <= 0
               }
             >
-              {loading ? t("saving") : t("saveChanges")}
+              {loading ? t("saving") : t("save")}
             </Button>
           </div>
         </form>
       </DialogContent>
     </Dialog>
+  );
+};
+
+// Delete Confirmation Dialog Component
+const DeleteConfirmationDialog = ({
+  expense,
+  onDelete,
+  children,
+}: {
+  expense: Expense;
+  onDelete: (id: string) => Promise<void>;
+  children: React.ReactNode;
+}) => {
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
+
+  const handleDelete = async () => {
+    setLoading(true);
+    try {
+      await onDelete(expense.id);
+    } catch (error) {
+      console.error("Error deleting expense:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{t("deleteExpense")}</AlertDialogTitle>
+          <AlertDialogDescription>
+            {t("deleteExpenseConfirmation")}
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel disabled={loading}>
+            {t("cancel") || "Cancel"}
+          </AlertDialogCancel>
+          <AlertDialogAction
+            onClick={handleDelete}
+            disabled={loading}
+            className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+          >
+            {loading ? t("deleting") : t("delete")}
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };
 
@@ -222,7 +284,7 @@ export const ExpenseList = () => {
   }
 
   return (
-    <Card className="border rounded-lg shadow-sm overflow-hidden">
+    <Card className="border rounded-lg shadow-sm overflow-hidden" dir="auto">
       <CardHeader className="bg-muted/30 pb-3">
         <CardTitle className="text-xl font-semibold">
           {t("recentExpenses")}
@@ -303,14 +365,18 @@ export const ExpenseList = () => {
                             <TbEdit className="h-4 w-4" />
                           </Button>
                         </EditExpenseDialog>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="h-8 w-8 p-0 rounded-full text-destructive hover:text-destructive hover:bg-destructive/10"
-                          onClick={() => deleteExpense(expense.id)}
+                        <DeleteConfirmationDialog
+                          expense={expense}
+                          onDelete={deleteExpense}
                         >
-                          <FiTrash2 className="h-4 w-4" />
-                        </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="h-8 w-8 p-0 rounded-full text-destructive hover:text-destructive hover:bg-destructive/10"
+                          >
+                            <FiTrash2 className="h-4 w-4" />
+                          </Button>
+                        </DeleteConfirmationDialog>
                       </div>
                     </TableCell>
                   </TableRow>
@@ -362,7 +428,7 @@ export const ExpenseList = () => {
                     </div>
                   </div>
 
-                  <div className="flex justify-between gap-2 pt-2 border-t">
+                  <div className="flex justify-between gap-4 pt-2 border-t">
                     <EditExpenseDialog
                       expense={expense}
                       onUpdate={updateExpense}
@@ -376,15 +442,19 @@ export const ExpenseList = () => {
                         {t("edit")}
                       </Button>
                     </EditExpenseDialog>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-8 px-3 text-destructive hover:text-destructive hover:bg-destructive/10"
-                      onClick={() => deleteExpense(expense.id)}
+                    <DeleteConfirmationDialog
+                      expense={expense}
+                      onDelete={deleteExpense}
                     >
-                      <FiTrash2 className="h-4 w-4 me-1" />
-                      {t("delete")}
-                    </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 px-3 text-destructive hover:text-destructive hover:bg-destructive/10"
+                      >
+                        <FiTrash2 className="h-4 w-4 me-1" />
+                        {t("delete")}
+                      </Button>
+                    </DeleteConfirmationDialog>
                   </div>
                 </div>
               ))}

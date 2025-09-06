@@ -331,7 +331,9 @@ export const AddExpenseDialog = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description">{t("description")}</Label>
+            <Label htmlFor="description">
+              {t("description")} ({t("optional")})
+            </Label>
             <Textarea
               id="description"
               value={formData.description}
@@ -342,6 +344,7 @@ export const AddExpenseDialog = () => {
                 }))
               }
               rows={3}
+              placeholder={t("enterDescription")}
             />
           </div>
 

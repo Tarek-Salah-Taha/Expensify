@@ -123,7 +123,7 @@ export const RegisterForm = ({ onToggleMode }: RegisterFormProps) => {
                 }))
               }
               className="w-full px-3 py-3 sm:py-2 text-base sm:text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder={t("confirmPasswordPlaceholder")}
+              placeholder={t("confirmPassword")}
               required
               minLength={6}
             />

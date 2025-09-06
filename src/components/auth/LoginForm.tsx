@@ -72,7 +72,7 @@ export const LoginForm = ({ onToggleMode }: LoginFormProps) => {
                 setFormData((prev) => ({ ...prev, email: e.target.value }))
               }
               className="w-full px-3 py-3 sm:py-2 text-base sm:text-sm rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Enter your email"
+              placeholder={t("enterEmail")}
               required
             />
           </div>
@@ -92,7 +92,7 @@ export const LoginForm = ({ onToggleMode }: LoginFormProps) => {
                 setFormData((prev) => ({ ...prev, password: e.target.value }))
               }
               className="w-full px-3 py-3 sm:py-2 text-base sm:text-sm rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Enter your password"
+              placeholder={t("enterPassword")}
               required
             />
           </div>

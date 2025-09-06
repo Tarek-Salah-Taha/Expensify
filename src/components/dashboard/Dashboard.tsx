@@ -20,7 +20,7 @@ export const Dashboard = () => {
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
   // Detect direction
-  const isRTL = i18n.language === "ar" || i18n.language === "he";
+  const isRTL = i18n.language === "ar";
   const direction = isRTL ? "rtl" : "ltr";
 
   const stats = useMemo(() => {
@@ -57,7 +57,6 @@ export const Dashboard = () => {
       <div dir={direction} className="space-y-6 p-4 sm:p-6 lg:p-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-          <h1 className="text-2xl sm:text-3xl font-bold">{t("dashboard")}</h1>
           <Skeleton className="h-10 w-32" />
         </div>
 
@@ -89,7 +88,6 @@ export const Dashboard = () => {
     <div dir={direction} className="space-y-6 p-4 sm:p-6 lg:p-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-        <h1 className="text-2xl sm:text-3xl font-bold">{t("dashboard")}</h1>
         <AddExpenseDialog />
       </div>
 
@@ -107,7 +105,7 @@ export const Dashboard = () => {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div className="flex items-center">
               <FiDollarSign
-                className={`h-4 w-4 text-muted-foreground  text-green-600 ${
+                className={`h-4 w-4 text-muted-foreground text-green-500 ${
                   isRTL ? "ml-2" : "mr-2"
                 }`}
               />
@@ -203,7 +201,7 @@ export const Dashboard = () => {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div className="flex items-center">
               <FiPieChart
-                className={`h-4 w-4 text-muted-foreground text-blue-600 ${
+                className={`h-4 w-4 text-muted-foreground text-blue-500 ${
                   isRTL ? "ml-2" : "mr-2"
                 }`}
               />
