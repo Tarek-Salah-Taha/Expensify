@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useExpenses } from "@/hooks/useExpenses";
+import { useExpenses } from "@/hooks/useExpenseContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -105,7 +105,7 @@ export const Dashboard = () => {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div className="flex items-center">
               <FiDollarSign
-                className={`h-4 w-4 text-muted-foreground text-green-500 ${
+                className={`h-4 w-4 text-muted-foreground text-green-600 ${
                   isRTL ? "ml-2" : "mr-2"
                 }`}
               />
@@ -201,7 +201,7 @@ export const Dashboard = () => {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div className="flex items-center">
               <FiPieChart
-                className={`h-4 w-4 text-muted-foreground text-blue-500 ${
+                className={`h-4 w-4 text-muted-foreground text-blue-400 ${
                   isRTL ? "ml-2" : "mr-2"
                 }`}
               />

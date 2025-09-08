@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useExpenses } from "@/hooks/useExpenses";
+import { useExpenses } from "@/hooks/useExpenseContext";
 import {
   Dialog,
   DialogContent,
@@ -107,13 +107,19 @@ const ArabicDatePicker = ({ value, onChange, isArabic }) => {
   return (
     <div className="relative">
       <div
-        className="flex items-center justify-between w-full px-3 py-2 text-sm border border-input bg-background hover:bg-accent hover:text-accent-foreground cursor-pointer rounded-md"
+        className={`flex items-center justify-between gap-3 w-full px-3 py-2 text-sm border border-input bg-background hover:bg-accent hover:text-accent-foreground cursor-pointer rounded-md ${
+          isArabic ? "flex-row-reverse text-right" : "text-left"
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span dir="rtl" className="text-right flex-1">
-          {value ? formatDisplayDate(new Date(value)) : "اختر التاريخ"}
+        <span className="flex-1">
+          {value
+            ? formatDisplayDate(new Date(value))
+            : isArabic
+            ? "اختر التاريخ"
+            : "Select date"}
         </span>
-        <FaCalendarAlt className="h-4 w-4 opacity-50" />
+        <FaCalendarAlt className="h-4 w-4 opacity-50 " />
       </div>
 
       {isOpen && (
@@ -237,7 +243,10 @@ export const AddExpenseDialog = () => {
       await addExpense({
         title: formData.title,
         amount: parseFloat(formData.amount),
-        category: formData.category,
+        category:
+          formData.category ||
+          EXPENSE_CATEGORIES[EXPENSE_CATEGORIES.length - 1],
+
         date: formData.date,
         description: formData.description,
       });
@@ -308,10 +317,14 @@ export const AddExpenseDialog = () => {
                 setFormData((prev) => ({ ...prev, category: value }))
               }
             >
-              <SelectTrigger>
+              <SelectTrigger
+                className={`flex ${
+                  isArabic ? "flex-row-reverse text-right" : "text-left"
+                }`}
+              >
                 <SelectValue placeholder={t("category")} />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent dir={isArabic ? "rtl" : "ltr"}>
                 {EXPENSE_CATEGORIES.map((category) => (
                   <SelectItem key={category} value={category}>
                     {t(category)}

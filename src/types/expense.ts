@@ -18,13 +18,13 @@ export interface ExpenseFormData {
 }
 
 export const EXPENSE_CATEGORIES = [
-  'food',
-  'transport', 
-  'entertainment',
-  'health',
-  'shopping',
-  'bills',
-  'other'
+  "food",
+  "transport",
+  "entertainment",
+  "health",
+  "shopping",
+  "bills",
+  "other",
 ] as const;
 
-export type ExpenseCategory = typeof EXPENSE_CATEGORIES[number];
+export type ExpenseCategory = (typeof EXPENSE_CATEGORIES)[number];

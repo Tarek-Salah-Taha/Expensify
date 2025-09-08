@@ -16,7 +16,7 @@ import { FiMoon, FiSun, FiGlobe, FiUser, FiLogOut } from "react-icons/fi";
 import toast from "react-hot-toast";
 
 export const Header = () => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const { user, signOut, isAuthenticated } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage } = useLanguage();
@@ -89,10 +89,15 @@ export const Header = () => {
                   </DropdownMenuItem>
                 </>
               ) : (
-                <div className="flex flex-col space-y-1 p-2">
-                  <p className="text-sm font-medium leading-none">Guest Mode</p>
+                <div
+                  dir={i18n.language === "ar" ? "rtl" : "ltr"}
+                  className="flex flex-col space-y-1 p-2"
+                >
+                  <p className="text-sm font-medium leading-none">
+                    {t("guestMode")}
+                  </p>
                   <p className="text-xs leading-none text-muted-foreground">
-                    Data saved locally
+                    {t("dataSavedLocally")}
                   </p>
                 </div>
               )}

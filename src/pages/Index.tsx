@@ -4,6 +4,7 @@ import { AuthPage } from "@/components/auth/AuthPage";
 import { Header } from "@/components/layout/Header";
 import { Dashboard } from "@/components/dashboard/Dashboard";
 import { useTranslation } from "react-i18next";
+import { ExpenseProvider } from "@/contexts/ExpenseContext";
 
 const Index = () => {
   const { loading, isAuthenticated } = useAuth();
@@ -32,7 +33,9 @@ const Index = () => {
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
       <main className="flex-1 container mx-auto px-4 py-6">
-        <Dashboard />
+        <ExpenseProvider>
+          <Dashboard />
+        </ExpenseProvider>
       </main>
     </div>
   );

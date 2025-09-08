@@ -10,6 +10,8 @@ const resources = {
       charts: "Charts",
       profile: "Profile",
       logout: "Logout",
+      guestMode: "Guest Mode",
+      dataSavedLocally: "Data saved locally",
 
       // Auth
       login: "Login",
@@ -49,6 +51,9 @@ const resources = {
       shopping: "Shopping",
       bills: "Bills",
       other: "Other",
+      utilities: "Utilities",
+      education: "Education",
+      travel: "Travel",
 
       // Dashboard
       totalExpenses: "Total Expenses",
@@ -70,6 +75,9 @@ const resources = {
       success: "Success",
       currency: "$",
       deleting: "Deleting...",
+      total: "total",
+      showMore: "Show More",
+      remaining: "remaining",
 
       // Messages
       expenseAdded: "Expense added successfully",
@@ -96,6 +104,8 @@ const resources = {
       charts: "الرسوم البيانية",
       profile: "الملف الشخصي",
       logout: "تسجيل الخروج",
+      guestMode: "وضع الضيف",
+      dataSavedLocally: "البيانات المحفوظة محليًا",
 
       // Auth
       login: "تسجيل الدخول",
@@ -135,6 +145,9 @@ const resources = {
       shopping: "تسوق",
       bills: "فواتير",
       other: "أخرى",
+      utilities: "المرافق",
+      education: "تعليم",
+      travel: "سفر",
 
       // Dashboard
       totalExpenses: "إجمالي المصروفات",
@@ -156,6 +169,9 @@ const resources = {
       success: "نجح",
       currency: "دولار",
       deleting: "جاري الحذف...",
+      total: "إجمالي",
+      showMore: "إظهار المزيد",
+      remaining: "متبقي",
 
       // Messages
       expenseAdded: "تم إضافة المصروف بنجاح",
@@ -165,7 +181,7 @@ const resources = {
       registerSuccess: "تم إنشاء الحساب بنجاح",
       logoutSuccess: "تم تسجيل الخروج بنجاح",
       deleteExpense: "حذف المصروف",
-      deleteExpenseConfirmation: "؟هل أنت متأكد أنك تريد حذف هذه المصروفات",
+      deleteExpenseConfirmation: "هل أنت متأكد أنك تريد حذف هذه المصروفات؟",
 
       // 404 Page
       pageNotFound: "404 - لم يتم العثور على الصفحة",
