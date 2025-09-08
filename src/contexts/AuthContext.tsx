@@ -1,7 +1,12 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { User } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase';
-import toast from 'react-hot-toast';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
+import { User } from "@supabase/supabase-js";
+import { supabase } from "@/lib/supabase";
 
 interface AuthContextType {
   user: User | null;
@@ -27,7 +32,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     // Get initial session
     const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
       setUser(session?.user ?? null);
       setLoading(false);
     };
@@ -35,50 +42,55 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     getSession();
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setUser(session?.user ?? null);
-        setLoading(false);
-      }
-    );
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (event, session) => {
+      setUser(session?.user ?? null);
+      setLoading(false);
+    });
 
     return () => subscription.unsubscribe();
   }, []);
 
   const signUp = async (email: string, password: string) => {
     if (!supabase) {
-      throw new Error('Supabase not configured');
+      throw new Error("Supabase not configured");
     }
-    
+
     const { error } = await supabase.auth.signUp({ email, password });
     if (error) throw error;
   };
 
   const signIn = async (email: string, password: string) => {
     if (!supabase) {
-      throw new Error('Supabase not configured');
+      throw new Error("Supabase not configured");
     }
-    
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
     if (error) throw error;
   };
 
   const signOut = async () => {
     if (!supabase) return;
-    
+
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
   };
 
   return (
-    <AuthContext.Provider value={{
-      user,
-      loading,
-      signUp,
-      signIn,
-      signOut,
-      isAuthenticated: !!user
-    }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        signUp,
+        signIn,
+        signOut,
+        isAuthenticated: !!user,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -87,7 +99,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };

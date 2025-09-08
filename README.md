@@ -1,6 +1,6 @@
 # 📊 Expensify
 
-A modern expense tracker application built with **React**, **TypeScript**, and **Supabase**.  
+A modern expense tracker application built with **React**, **TypeScript**, **Tailwind CSS**, and **Supabase**.  
 Expensify helps you manage your daily expenses with a clean UI, dark/light mode support, and multi-language support.
 
 ---
@@ -25,13 +25,7 @@ Expensify helps you manage your daily expenses with a clean UI, dark/light mode 
 - **UI:** Tailwind CSS + shadcn/ui
 - **State Management:** Context API
 - **Backend:** Supabase (Auth + Database)
-- **Data Fetching:** React Query
-- **Forms:** React Hook Form
 - **Localization:** i18next
-- **Icons:** Lucide React
+- **Icons:** React Icons
 
 ---
-
-```
-
-```

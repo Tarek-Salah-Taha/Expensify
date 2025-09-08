@@ -592,8 +592,7 @@ export const ExpenseList = () => {
                       </TableCell>
                       <TableCell className="font-medium">
                         <span className="text-foreground font-semibold">
-                          {t("currency")}
-                          {expense.amount.toFixed(2)}
+                          {expense.amount.toFixed(2)} {t("currency")}
                         </span>
                       </TableCell>
                       <TableCell className="font-medium">
@@ -686,8 +685,7 @@ export const ExpenseList = () => {
                         {t("amount")}:
                       </span>
                       <p className="font-semibold text-foreground">
-                        {t("currency")}
-                        {expense.amount.toFixed(2)}
+                        {expense.amount.toFixed(2)} {t("currency")}
                       </p>
                     </div>
                     <div className={isArabic ? "text-start" : "text-end"}>

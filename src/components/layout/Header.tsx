@@ -74,7 +74,10 @@ export const Header = () => {
             <DropdownMenuContent className="w-56" align="end" forceMount>
               {isAuthenticated ? (
                 <>
-                  <div className="flex flex-col space-y-1 p-2">
+                  <div
+                    className="flex flex-col space-y-1 p-2"
+                    dir={i18n.language === "ar" ? "rtl" : "ltr"}
+                  >
                     <p className="text-sm font-medium leading-none">
                       {user?.email}
                     </p>
@@ -83,8 +86,11 @@ export const Header = () => {
                     </p>
                   </div>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleLogout}>
-                    <FiLogOut className="mr-2 h-4 w-4" />
+                  <DropdownMenuItem
+                    onClick={handleLogout}
+                    dir={i18n.language === "ar" ? "rtl" : "ltr"}
+                  >
+                    <FiLogOut className="m-2 h-4 w-4" />
                     <span>{t("logout")}</span>
                   </DropdownMenuItem>
                 </>

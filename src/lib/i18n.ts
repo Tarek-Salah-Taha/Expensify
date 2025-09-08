@@ -42,6 +42,7 @@ const resources = {
       edit: "Edit",
       enterDescription: "Enter Description",
       optional: "Optional",
+      saving: "Saving...",
 
       // Categories
       food: "Food",
@@ -76,7 +77,7 @@ const resources = {
       currency: "$",
       deleting: "Deleting...",
       total: "total",
-      showMore: "Show More",
+      showMore: "Show more",
       remaining: "remaining",
 
       // Messages
@@ -136,6 +137,7 @@ const resources = {
       enterPassword: "أدخل كلمة المرور الخاصة بك",
       enterDescription: "أدخل الوصف",
       optional: "اختياري",
+      saving: "جاري الحفظ...",
 
       // Categories
       food: "طعام",

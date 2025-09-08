@@ -105,7 +105,7 @@ export const Dashboard = () => {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div className="flex items-center">
               <FiDollarSign
-                className={`h-4 w-4 text-muted-foreground text-green-600 ${
+                className={`h-4 w-4 text-muted-foreground text-emerald-600 ${
                   isRTL ? "ml-2" : "mr-2"
                 }`}
               />
@@ -201,7 +201,7 @@ export const Dashboard = () => {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div className="flex items-center">
               <FiPieChart
-                className={`h-4 w-4 text-muted-foreground text-blue-400 ${
+                className={`h-4 w-4 text-muted-foreground text-violet-600 ${
                   isRTL ? "ml-2" : "mr-2"
                 }`}
               />
